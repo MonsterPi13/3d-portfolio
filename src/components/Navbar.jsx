@@ -12,13 +12,13 @@ const Navbar = () => {
       <nav className="flex items-center gap-x-6 font-medium text-xl ">
         <NavLink
           to="/about"
-          className={({ isActive }) => `first-letter:uppercase text-blue-300 transition duration-300 ${isActive ? 'text-blue-500' : 'text-black-500'}`}
-        >
+          className={({ isActive }) => `first-letter:uppercase transition duration-300 ${isActive ? 'text-blue-500' : 'text-black-500'}`}
+          >
           about
         </NavLink>
         <NavLink
           to="/projects"
-          className={({ isActive }) => `first-letter:uppercase text-blue-300 transition duration-300 ${isActive ? 'text-blue-500' : 'text-black-500'}`}
+          className={({ isActive }) => `first-letter:uppercase transition duration-300 ${isActive ? 'text-blue-500' : 'text-black-500'}`}
         >
           projects
         </NavLink>
