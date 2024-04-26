@@ -10,10 +10,16 @@ const Navbar = () => {
       </NavLink>
 
       <nav className="flex items-center gap-x-6 font-medium text-xl ">
-        <NavLink to="/about" className="first-letter:uppercase hover:text-blue-500 transition duration-300">
+        <NavLink
+          to="/about"
+          className={({ isActive }) => `first-letter:uppercase text-blue-300 transition duration-300 ${isActive ? 'text-blue-500' : 'text-black-500'}`}
+        >
           about
         </NavLink>
-        <NavLink to="/projects" className="first-letter:uppercase hover:text-blue-500 transition duration-300">
+        <NavLink
+          to="/projects"
+          className={({ isActive }) => `first-letter:uppercase text-blue-300 transition duration-300 ${isActive ? 'text-blue-500' : 'text-black-500'}`}
+        >
           projects
         </NavLink>
       </nav>

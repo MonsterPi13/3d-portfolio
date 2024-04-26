@@ -33,9 +33,9 @@ const Home = () => {
 
           <Sky isRotating={isRotating} />
           <Programmer
-            rotation={[-Math.PI / 2, 0, 1.4]}
-            scale={0.13}
-            position={[0, -0.63, 3.75]}
+            rotation={[-Math.PI / 2 -0.4, 0, Math.PI * 2]}
+            scale={0.19}
+            position={[0, -0.8, 3.8]}
             isRotating={isRotating}
           />
           <ForestHouse
