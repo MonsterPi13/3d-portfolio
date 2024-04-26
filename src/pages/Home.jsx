@@ -1,14 +1,19 @@
 import { Suspense, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 
-import { Loader } from "../components";
+import { Loader, HomeInfo } from "../components";
 import { ForestHouse, Programmer, Sky } from "../models";
 
 const Home = () => {
+  const [currentStage, setCurrentStage] = useState(1);
   const [isRotating, setIsRotating] = useState(false);
 
   return (
     <section className="relative w-full h-screen">
+      <div className="absolute top-28 left-0 right-0 z-10 flex items-center justify-center">
+        {currentStage && <HomeInfo currentStage={currentStage} />}
+      </div>
+
       <Canvas
         camera={{ near: 0.1, far: 1000 }}
         className={`w-full h-full bg-transparent ${
@@ -33,7 +38,7 @@ const Home = () => {
 
           <Sky isRotating={isRotating} />
           <Programmer
-            rotation={[-Math.PI / 2 -0.4, 0, Math.PI * 2]}
+            rotation={[-Math.PI / 2 - 0.4, 0, Math.PI * 2]}
             scale={0.19}
             position={[0, -0.8, 3.8]}
             isRotating={isRotating}
@@ -44,7 +49,7 @@ const Home = () => {
             scale={[28, 28, 28]}
             isRotating={isRotating}
             setIsRotating={setIsRotating}
-            setCurrentStage={() => {}}
+            setCurrentStage={setCurrentStage}
           />
         </Suspense>
       </Canvas>
